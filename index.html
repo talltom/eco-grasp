@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#GRASP</title>
+  <link rel="stylesheet" href="css/taxonomy.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+  <!--Reports modal-->
+  <div class="modal fade" id="reportsModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div id="reportsModalContent"></div>
+        <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <!--Page-->
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <p class="pull-right"><a href="//petajakarta.org"><img src="img/petajakarta_black_pixel_top.png" width=200></a></p>
+      <h1 class="pull-right" style="font-size:23vw;">#GRASP</h1>
+    </div>
+    <div class="col-xs-8" style="margin-top:15%; margin-bottom:2%;">
+      <p class="lead" style="font-size:2vw;">An experiment to crowd-source urban data using Twitter&nbsp;&nbsp;<a href="#raft"><span class="glyphicon glyphicon-arrow-down" style="font-size:1.2vw" aria-hidden="true"></span></a></p>
+    </div>
+    <div class="col-xs-4">
+      <h2 class="pull-right" style="font-size:4vw; text-align:right; margin-top:0px;">GeoSocial<BR>Rapid<BR>Assessment<BR>Platform</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12" style="margin-top:10px; padding-left:0;" id="raft">
+      <div class="bg"></div>
+      <div class="col-xs-4 col-xs-push-1" style="margin-top:25%;">
+        <div class="row">
+              <a href="#data" class="btn btn-default pull-left" style="font-size:2vw; margin:5px;"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Explore the data</a>
+              <a href="#project" class="btn btn-info pull-left" style="font-size:2vw; margin:5px;"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About the research</a>
+          </div>
+      </div>
+      <div class="col-xs-4 col-xs-push-4" style="margin-bottom:5%;" >
+        <h1 class="pull-right" style="font-size:6vw; color:white; text-align:right">Mapping Fluvial Landscape Ecology using Twitter</h1>
+        <h3 class="pull-right" style="color:white; text-align:right; font-size:2vw;">Ciliwung River, Jakarta</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 visible-xs rank"></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12" style="padding:0;">
+      <div id="map"></div>
+    </div>
+  </div>
+  <div class="row">
+    <hr style="margin-top:0px;">
+    <div class="col-md-6" id="project">
+        <h1>Capturing Change at the Interface between River and City</h1>
+        <p> The study presents a novel prototype for the semi-supervised, crowd-sourced collection of coarse landscape-level biodiversity data in real time, via the social media platform Twitter and coupled urban data collection platform <a>CogniCity</a>.</p>
+        <p>In March 2014 trained volunteers boated down a 7.8 km section of the Ciliwung River in the city of Jakarta, Indonesia, and recorded land use data as per pre-specified landscape type categories. Reports were of unrestricted typology and included text as well as photographs, and geolocation metadata.</p>
+        <p>The methodological simplicity of this this Twitter-based experimental  approach and accessibility of the software enables communities – particularly non-specialists – to actively contribute to local landscape mapping projects.</p>
+    </div>
+    <div class="col-md-6">
+<iframe width="600" height="360" src="https://www.youtube.com/embed/0bXlBbXZl3I?rel=0&amp;showinfo=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="row">
+    <hr>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.js"></script>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="js/map.js"></script>
+<script src="js/taxonomy.js"></script>
+<script>
+
+</script>
+</body>
+</html>

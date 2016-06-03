@@ -1,0 +1,134 @@
+{"name": "Tweets", "count": "88", "level": "0",
+"children": [
+{
+  "name": "Mentions", "count": "105", "level": "1",
+  "children": [
+    {
+      "name": "Biotic", "count": "50", "level": "2",
+      "children": [
+        {"name": "Flora", "count": "37", "level": "3",
+          "children": [
+            {"name": "Bamboo", "count": "8", "level": "4",
+              "children": [
+                {"name": "Yellow", "count": "1", "level": "5"},
+                {"name": "Unspecified", "count": "7", "level": "5"}
+
+              ]
+            },
+
+            {"name": "Horticulture", "count": "2", "level": "4"},
+            {"name": "Tree",
+              "count": "27", "level": "4",
+              "children":[
+                  {"name": "Aren", "count": "1", "level": "5"},
+                  {"name": "Banana", "count": "11", "level": "5"},
+                  {"name": "Carambola", "count": "1", "level": "5"},
+                  {"name": "Cluster Fig", "count": "1", "level": "5"},
+                  {"name": "Kapuk", "count": "1", "level": "5"},
+                  {"name": "Mahogany", "count": "1", "level": "5"},
+                  {"name": "Rambutan", "count": "2", "level": "5"},
+                  {"name": "Rengas", "count": "2", "level": "5"},
+                  {"name": "Salak", "count": "1", "level": "5"},
+                  {"name": "Teak", "count": "2", "level": "5"},
+                  {"name": "Unspecified", "count": "4", "level": "5"}
+
+                ]
+              }
+            ]
+          },
+
+        {"name": "Fauna", "count": "13", "level": "3",
+          "children": [
+            {"name": "Avian", "count": "2", "level": "4",
+              "children": [
+                {"name": "Ducks", "count": "1", "level": "5"},
+                {"name": "Geese", "count": "1", "level": "5"}
+              ]
+            },
+
+            {"name": "Fish", "count": "2", "level": "4",
+              "children": [
+                {"name": "Catfish", "count": "2", "level": "5"}
+              ]
+            },
+
+            {"name": "Mammalian","count": "9", "level": "4",
+              "children": [
+                {"name": "Goats", "count": "1", "level": "5"},
+                {"name": "Humans", "count": "8", "level": "5",
+                  "children": [
+                    {"name": "Fishing", "count": "7", "level": "6"},
+                    {"name": "Recreation", "count": "1", "level": "6"}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Abiotic", "count": "55", "level": "2",
+      "children": [
+        {"name": "Infrastructure", "count": "28", "level": "3",
+          "children": [
+              {"name": "Bridge", "count": "2", "level": "4"},
+              {"name": "Building", "count": "16", "level": "4",
+                "children": [
+                  {"name": "Residential", "count": "9", "level": "5"},
+                  {"name": "Non-residential", "count": "5", "level": "5",
+                    "children": [
+                      {"name": "Community centre", "count": "1", "level": "6"},
+                      {"name": "School", "count": "1", "level": "6"},
+                      {"name": "Tofu factory", "count": "2", "level": "6"},
+                      {"name": "Mosque", "count": "1", "level": "6"}
+                    ]
+                  },
+                    {"name": "Unspecified", "count": "2", "level": "5"}
+                  ]
+              },
+              {"name": "Electrical cables", "count": "1", "level": "4"},
+              {"name": "Normalisation", "count": "9", "level": "4",
+                "children": [
+                  {"name": "Measurements", "count": "4", "level": "5"},
+                  {"name": "Under construction", "count": "3", "level": "5"},
+                  {"name": "Complete", "count": "2", "level": "5"}
+                  ]
+                }
+            ]
+          },
+        {"name": "Topography", "count": "2", "level": "3",
+          "children": [
+            {"name": "Caves", "count": "2", "level": "4"}
+          ]
+        },
+        {"name": "Waste", "count": "25", "level": "3",
+          "children":[
+            {"name":"Land", "count": "22", "level": "4",
+              "children":[
+                {"name": "Runoff", "count": "5", "level": "5",
+                  "children": [
+                    {"name": "Aquaculture", "count": "1", "level": "6"},
+                    {"name": "Residential", "count": "2", "level": "6"},
+                    {"name": "Tofu factory", "count": "1", "level": "6"},
+                    {"name": "Unspecified", "count": "1", "level": "6"}
+                  ]
+                },
+                {"name": "Trash", "count": "10", "level": "5"},
+                {"name": "Trash heap", "count": "7", "level": "5"}
+                ]
+              },
+              {"name":"River", "count": "3", "level": "4",
+                "children":[
+                  {"name": "Trash", "count": "2", "level": "5"},
+                  {"name": "Water Quality", "count": "1", "level": "5"}
+                  ]
+                }
+            ]
+          }
+      ]
+    }
+  ]
+  }
+]
+}
