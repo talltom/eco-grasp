@@ -29,13 +29,33 @@ var reportStyle = {
   "pane": "reportpane"
 }
 
-var reportStyleHighlight = {
+var reportStyleSelect = {
   "radius":5,
   "stroke":true,
   "color":'steelblue',
   "weight":1,
   "fillColor":'steelblue',
   "fillOpacity":1,
+  "pane": "reportpane"
+}
+
+var reportStyleHighlight = {
+  "radius":5,
+  "stroke":true,
+  "color":'#fff',
+  "weight":1,
+  "fillColor":'steelblue',
+  "fillOpacity":1,
+  "pane": "reportpane"
+}
+
+var reportStyleHide = {
+  "radius":5,
+  "stroke":true,
+  "color":'#fff',
+  "weight":0,
+  "fillColor":'#fff',
+  "fillOpacity":0,
   "pane": "reportpane"
 }
 
@@ -81,7 +101,7 @@ var reportsLayer = L.geoJson(null,
   },
   onEachFeature: function(feature, layer){
     layer.on('click', function(e){
-        e.target.setStyle(reportStyleHighlight);
+        e.target.setStyle(reportStyleSelect);
         _reportsModal(e);
       });
     }
@@ -124,3 +144,18 @@ else { // Small screens
   $(".rank").addClass('taxonomy').append('<h4>Tweet taxonomy</h4>');
   map.setView([-6.288, 106.85], 15); // Re-center map
 }
+
+var filterReports = function(parentLevel, parentName, level, name){
+  var keys = Object.keys(reportsLayer._layers);
+    for (var i = 0; i < keys.length; i++){
+      if (reportsLayer._layers[keys[i]].feature.properties['level_'+parentLevel] !== null){
+        if (reportsLayer._layers[keys[i]].feature.properties['level_'+parentLevel].split(" (")[0] === parentName && reportsLayer._layers[keys[i]].feature.properties['level_'+level].split(" (")[0] === name ){
+          reportsLayer._layers[keys[i]].setStyle(reportStyleHighlight);
+        }
+        else {
+          reportsLayer._layers[keys[i]].setStyle(reportStyleHide);
+        }
+      }
+
+  }
+};

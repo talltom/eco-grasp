@@ -33,8 +33,15 @@ d3.json("data/taxonomy/taxonomy.json", function(error, json) {
 
   node.append("circle")
       .attr("r", 4.5)
-      .on("mouseover", function(){console.log(d3.select(this)[0][0].__data__.parent.name, d3.select(this)[0][0].__data__.parent.level, d3.select(this)[0][0].__data__.name)})//d3.select(this).style("fill", "lightblue");})
-      .on("mouseout", function(){d3.select(this).style("fill", "#fff")});
+      .on("click", function(){
+        filterReports(d3.select(this)[0][0].__data__.parent.level,
+                      d3.select(this)[0][0].__data__.parent.name,
+                      d3.select(this)[0][0].__data__.level,
+                      d3.select(this)[0][0].__data__.name);
+        d3.selectAll("circle").style("fill", "#fff");
+        d3.select(this).style("fill", "steelblue");
+      });//d3.select(this).style("fill", "lightblue");})
+      //.on("mouseout", function(){d3.select(this).style("fill", "#fff")});
 
   node.append("text")
       .attr("dx", function(d) { return d.children ? -8 : 8; })
