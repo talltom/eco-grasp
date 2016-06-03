@@ -19,6 +19,16 @@ var riverTopStyle = {
   "pane": "rpane1"
 }
 
+var reportStyle = {
+  "radius":5,
+  "stroke":true,
+  "color":'#FFF',
+  "weight":2,
+  "fillColor":'#dd2515',
+  "fillOpacity":1,
+  "pane": "reportpane"
+}
+
 $("#map").css("height", $(window).height());
 
 /* Map */
@@ -31,6 +41,7 @@ map.scrollWheelZoom.disable();
 var basemapPane = map.createPane('bpane');
 var riverPane0 = map.createPane('rpane0');
 var riverPane1 = map.createPane('rpane1');
+var reportsPane = map.createPane('reportpane')
 
 /* River Track */
 var riverBedLayer = L.geoJson(null, {style:riverBedStyle}).addTo(map);
@@ -46,14 +57,17 @@ _reportsModal = function(e){
   $('#reportsModalContent').append('<blockquote class="twitter-tweet" data-conversation="none"><a target="_blank"  href="'+e.target.feature.properties["Tweet URL"]+'">'+e.target.feature.properties.text+'</a></blockquote></div>');
   $('#reportsModal').modal('show');
   twttr.widgets.load($('#reportsModalContent'));
-
 }
 
 /* Reports */
 var reportsLayer = L.geoJson(null,
-  {onEachFeature: function(feature, layer){
+  {pointToLayer: function(feature, latlng){
+     return L.circleMarker(latlng, reportStyle);
+  },
+  onEachFeature: function(feature, layer){
     layer.on('click', function(e){
         _reportsModal(e);
+        //feature.setIcon()
       });
     }
   }).addTo(map);

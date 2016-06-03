@@ -1,12 +1,12 @@
 .taxonomy {
-    min-width:572px;
+    min-width:576px;
     padding: 6px 8px;
     font: 14px/16px Arial, Helvetica, sans-serif;
     background: white;
     background: rgba(255,255,255,0.8);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 5px;
-}
+  }
 .taxonomy h4 {
     margin: 0 0 5px;
     color: #777;
@@ -15,11 +15,11 @@
 .node circle {
   fill: #fff;
   stroke: steelblue;
-  stroke-width: 1.5px;
+  stroke-width: 0.8px;
 }
 
 .node {
-  font: 10px sans-serif;
+  font: 8px sans-serif;
   cursor: pointer;
 }
 

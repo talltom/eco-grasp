@@ -1,8 +1,8 @@
 var width = $(window).width()/2.0,
-    height = $(window).height()/2.0;
+    height = $(window).height()/1.2;
 
 var tree = d3.layout.tree()
-    .size([height, width - 230]);
+    .size([height, width - 135]);
 
 var diagonal = d3.svg.diagonal()
     .projection(function(d) { return [d.y, d.x]; });
@@ -11,7 +11,7 @@ var svg = d3.select(".taxonomy").append("svg")
     .attr("width", width)
     .attr("height", height)
   .append("g")
-    .attr("transform", "translate(40,0)");
+    .attr("transform", "translate(50,0)");
 
 d3.json("data/taxonomy/taxonomy.json", function(error, json) {
   if (error) throw error;
