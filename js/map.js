@@ -22,9 +22,19 @@ var riverTopStyle = {
 var reportStyle = {
   "radius":5,
   "stroke":true,
-  "color":'#FFF',
-  "weight":2,
-  "fillColor":'#dd2515',
+  "color":'steelblue',
+  "weight":1,
+  "fillColor":'#fff',
+  "fillOpacity":1,
+  "pane": "reportpane"
+}
+
+var reportStyleHighlight = {
+  "radius":5,
+  "stroke":true,
+  "color":'steelblue',
+  "weight":1,
+  "fillColor":'steelblue',
   "fillOpacity":1,
   "pane": "reportpane"
 }
@@ -57,6 +67,11 @@ _reportsModal = function(e){
   $('#reportsModalContent').append('<blockquote class="twitter-tweet" data-conversation="none"><a target="_blank"  href="'+e.target.feature.properties["Tweet URL"]+'">'+e.target.feature.properties.text+'</a></blockquote></div>');
   $('#reportsModal').modal('show');
   twttr.widgets.load($('#reportsModalContent'));
+
+  // Reset point style after modal close
+  $('#reportsModal').on('hidden.bs.modal', function () {
+    e.target.setStyle(reportStyle);
+  });
 }
 
 /* Reports */
@@ -66,8 +81,8 @@ var reportsLayer = L.geoJson(null,
   },
   onEachFeature: function(feature, layer){
     layer.on('click', function(e){
+        e.target.setStyle(reportStyleHighlight);
         _reportsModal(e);
-        //feature.setIcon()
       });
     }
   }).addTo(map);
