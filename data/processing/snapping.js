@@ -19,12 +19,6 @@ for (var i = 0; i < reports.features.length; i++){
   for (var j = 0; j < propertyKeys.length; j++){
     newFeature.properties[propertyKeys[j]] = reports.features[i].properties[propertyKeys[j]];
   }
-  //for (var j = 0; j < reports.features[i].properties.length; j++){
-  //console.log(propertyKeys);
-    //newfeature.properties[reports.features[i].properties[j]]
-  //}
-  //newfeature.properties
-  //onsole.log(turf.pointOnLine(river.features[0], reports.features[i]))
   snapped.push(newFeature);
 }
 
