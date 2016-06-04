@@ -19,7 +19,7 @@ var riverTopStyle = {
   "pane": "rpane1"
 }
 
-var reportStyle = {
+var reportStyleSelect = {
   "radius":5,
   "stroke":true,
   "color":'steelblue',
@@ -29,17 +29,7 @@ var reportStyle = {
   "pane": "reportpane"
 }
 
-var reportStyleSelect = {
-  "radius":5,
-  "stroke":true,
-  "color":'steelblue',
-  "weight":1,
-  "fillColor":'steelblue',
-  "fillOpacity":1,
-  "pane": "reportpane"
-}
-
-var reportStyleHighlight = {
+var reportStyle = {
   "radius":5,
   "stroke":true,
   "color":'#fff',
@@ -150,7 +140,7 @@ var filterReports = function(parentLevel, parentName, level, name){
     for (var i = 0; i < keys.length; i++){
       if (reportsLayer._layers[keys[i]].feature.properties['level_'+parentLevel] !== null){
         if (reportsLayer._layers[keys[i]].feature.properties['level_'+parentLevel].split(" (")[0] === parentName && reportsLayer._layers[keys[i]].feature.properties['level_'+level].split(" (")[0] === name ){
-          reportsLayer._layers[keys[i]].setStyle(reportStyleHighlight);
+          reportsLayer._layers[keys[i]].setStyle(reportStyle);
         }
         else {
           reportsLayer._layers[keys[i]].setStyle(reportStyleHide);
