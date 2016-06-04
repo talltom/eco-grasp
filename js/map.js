@@ -138,7 +138,7 @@ else { // Small screens
 var filterReports = function(parentLevel, parentName, level, name){
   var keys = Object.keys(reportsLayer._layers);
     for (var i = 0; i < keys.length; i++){
-      if (reportsLayer._layers[keys[i]].feature.properties['level_'+parentLevel] !== null){
+      if (parentLevel !== null){
         if (reportsLayer._layers[keys[i]].feature.properties['level_'+parentLevel].split(" (")[0] === parentName && reportsLayer._layers[keys[i]].feature.properties['level_'+level].split(" (")[0] === name ){
           reportsLayer._layers[keys[i]].setStyle(reportStyle);
         }
@@ -146,6 +146,8 @@ var filterReports = function(parentLevel, parentName, level, name){
           reportsLayer._layers[keys[i]].setStyle(reportStyleHide);
         }
       }
-
+      else {
+        reportsLayer._layers[keys[i]].setStyle(reportStyle);
+      }
   }
 };

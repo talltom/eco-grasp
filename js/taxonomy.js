@@ -1,5 +1,7 @@
 var width = $(window).width()/2.0,
-    height = $(window).height()/1.2;
+    //height = $(window).height()/1.2;
+    height = 500;
+
 
 var tree = d3.layout.tree()
     .size([height, width - 135]);
@@ -34,10 +36,18 @@ d3.json("data/taxonomy/taxonomy.json", function(error, json) {
   node.append("circle")
       .attr("r", 4.5)
       .on("click", function(){
-        filterReports(d3.select(this)[0][0].__data__.parent.level,
-                      d3.select(this)[0][0].__data__.parent.name,
-                      d3.select(this)[0][0].__data__.level,
-                      d3.select(this)[0][0].__data__.name);
+        if (d3.select(this)[0][0].__data__.level == 0){
+          filterReports(null,
+                        null,
+                        d3.select(this)[0][0].__data__.level,
+                        d3.select(this)[0][0].__data__.name);
+        }
+        else {
+          filterReports(d3.select(this)[0][0].__data__.parent.level,
+                        d3.select(this)[0][0].__data__.parent.name,
+                        d3.select(this)[0][0].__data__.level,
+                        d3.select(this)[0][0].__data__.name);
+              }
         d3.selectAll("circle").style("fill", "#fff");
         d3.select(this).style("fill", "steelblue");
       });//d3.select(this).style("fill", "lightblue");})
