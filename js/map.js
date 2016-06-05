@@ -56,12 +56,13 @@ var map = L.map('map', {attributionControl:false, zoomControl:false}).setView([-
 
 /*UX*/
 map.scrollWheelZoom.disable();
+L.control.scale({position:'bottomright', imperial:false}).addTo(map);
 
 /* Panes */
 var basemapPane = map.createPane('bpane');
 var riverPane0 = map.createPane('rpane0');
 var riverPane1 = map.createPane('rpane1');
-var reportsPane = map.createPane('reportpane')
+var reportsPane = map.createPane('reportpane');
 
 /* River Track */
 var riverBedLayer = L.geoJson(null, {style:riverBedStyle}).addTo(map);
@@ -82,8 +83,6 @@ _reportsModal = function(e){
   $('#reportsModalContent').append('<blockquote class="twitter-tweet" data-conversation="none"><a target="_blank"  href="'+e.target.feature.properties["Tweet URL"]+'">'+e.target.feature.properties.text+'</a></blockquote></div>');
   $('#reportsModal').modal('show');
   twttr.widgets.load($('#reportsModalContent'));
-
-
 }
 
 /* Reports */
