@@ -1,6 +1,7 @@
 var width = $(window).width()/2.0,
-    //height = $(window).height()/1.2;
-    height = 500;
+    height = $(window).height()/1.2;
+    //height = 500;
+    width = 600;
 
 
 var tree = d3.layout.tree()

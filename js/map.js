@@ -73,15 +73,17 @@ $.getJSON('data/river/river.geojson', function(data){
 
 /* Reports Modal */
 _reportsModal = function(e){
+  // Reset point style after modal close
+  $('#reportsModal').on('hidden.bs.modal', function () {
+    e.target.setStyle(reportStyle);
+  });
+
   $('#reportsModalContent').empty();
   $('#reportsModalContent').append('<blockquote class="twitter-tweet" data-conversation="none"><a target="_blank"  href="'+e.target.feature.properties["Tweet URL"]+'">'+e.target.feature.properties.text+'</a></blockquote></div>');
   $('#reportsModal').modal('show');
   twttr.widgets.load($('#reportsModalContent'));
 
-  // Reset point style after modal close
-  $('#reportsModal').on('hidden.bs.modal', function () {
-    e.target.setStyle(reportStyle);
-  });
+
 }
 
 /* Reports */
@@ -121,7 +123,6 @@ if ($(window).width() > 767){ // Large screens
       this._div.innerHTML = '<h4>Tweet Taxonomy</h4>'; //|| Fluvial Landscape Ecologies
       return this._div;
   };
-
   taxonomy.addTo(map);
 
 }
@@ -138,16 +139,14 @@ else { // Small screens
 var filterReports = function(parentLevel, parentName, level, name){
   var keys = Object.keys(reportsLayer._layers);
     for (var i = 0; i < keys.length; i++){
-      if (parentLevel !== null){
+      reportsLayer._layers[keys[i]].setStyle(reportStyleHide);
+      if (level == 0) {
+        reportsLayer._layers[keys[i]].setStyle(reportStyle);
+      }
+      else if (reportsLayer._layers[keys[i]].feature.properties['level_'+parentLevel] !== null){
         if (reportsLayer._layers[keys[i]].feature.properties['level_'+parentLevel].split(" (")[0] === parentName && reportsLayer._layers[keys[i]].feature.properties['level_'+level].split(" (")[0] === name ){
           reportsLayer._layers[keys[i]].setStyle(reportStyle);
         }
-        else {
-          reportsLayer._layers[keys[i]].setStyle(reportStyleHide);
-        }
-      }
-      else {
-        reportsLayer._layers[keys[i]].setStyle(reportStyle);
       }
   }
 };
