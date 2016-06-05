@@ -51,6 +51,7 @@ d3.json("data/taxonomy/taxonomy.json", function(error, json) {
               }
         d3.selectAll("circle").style("fill", "#fff");
         d3.select(this).style("fill", "steelblue");
+        $('#mapModal').modal('show');
       });//d3.select(this).style("fill", "lightblue");})
       //.on("mouseout", function(){d3.select(this).style("fill", "#fff")});
 
