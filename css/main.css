@@ -1,0 +1,16 @@
+.bg {
+  background-image: url('/img/raft2.jpg');
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-filter: brightness(40%) contrast(70%);
+  filter: brightness(40%) contrast(70%);
+}
+
+.modal-content {
+  overflow: auto;
+  padding-bottom: 15px;
+  max-width: 520px;
+}

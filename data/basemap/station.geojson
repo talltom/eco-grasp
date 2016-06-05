@@ -1,0 +1,13 @@
+{
+  "type": "Feature",
+  "properties": {
+    "name": "Stasiun Pasar Minggu"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      106.84478759765624,
+      -6.283391678422748
+    ]
+  }
+}
