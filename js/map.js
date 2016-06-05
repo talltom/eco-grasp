@@ -107,7 +107,6 @@ $.getJSON('data/reports/reports_snapped.geojson', function(data){
 var basemapLayer = L.geoJson(null, {style:basemapPolygonStyle}).addTo(map);
 $.getJSON('data/basemap/osm_polygon_basemap.topojson', function(data){
     basemapLayer.addData(topojson.feature(data, data.objects.osm_polygon_basemap));
-
   }
 );
 
